@@ -19,6 +19,9 @@ class Game():
 
         self.mini_map_surf.fill("#e9f09c")
         gravity = 0
+        isMoving = False
+        moving = []
+
 
 
         while True:
@@ -27,15 +30,18 @@ class Game():
                     pygame.quit()
                 if event.type == pygame.KEYDOWN:
                     keys = pygame.key.get_pressed()
+                    # print(keys)
                     if event.key == pygame.K_SPACE and player_rect.bottom >= 550:
                         gravity = -15
                     # if event.key == pygame.K_d:
                     # if event.key == pygame.K_a:
-                    if keys[pygame.K_a]:
+                    if keys[pygame.K_a]:                    
+                        self.player_surf = pygame.image.load("C:/Users/eran rotem/Desktop/repo/MysticalMineshaft/8BitPNG/8BitMinerFlip.png").convert_alpha()
                         player_rect.x -= 20
                     if keys[pygame.K_d]:
+                        self.player_surf = pygame.image.load("C:/Users/eran rotem/Desktop/repo/MysticalMineshaft/8BitPNG/8BitMinerV4.png").convert_alpha()
                         player_rect.x += 20
-            
+                                
             self.screen.blit(self.backgr_surf, (0, 0))
             self.screen.blit(self.player_surf, player_rect)
             self.screen.blit(self.mini_map_surf, (1230, 580))
