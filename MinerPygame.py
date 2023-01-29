@@ -12,16 +12,12 @@ class Game():
         # self.backgr_surf = pygame.Surface((900, 500))
         # self.backgr_surf.fill("#1b6e3b")
         
-        # x_pos = 100
         self.player_surf = pygame.image.load("C:/Users/eran rotem/Desktop/repo/MysticalMineshaft/8BitPNG/8BitMinerV4.png").convert_alpha()
         # self.player_surf = pygame.Surface((18, 32))
         player_rect = self.player_surf.get_rect(midbottom = (100, 550))
 
         self.mini_map_surf.fill("#e9f09c")
         gravity = 0
-        isMoving = False
-        moving = []
-
 
 
         while True:
