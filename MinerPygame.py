@@ -18,19 +18,18 @@ class Game():
 
         self.mini_map_surf.fill("#e9f09c")
         gravity = 0
-
-
+    
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                 if event.type == pygame.KEYDOWN:
-                    keys = pygame.key.get_pressed()
                     # print(keys)
                     if event.key == pygame.K_SPACE and player_rect.bottom >= 550:
                         gravity = -15
                     # if event.key == pygame.K_d:
                     # if event.key == pygame.K_a:
+                    keys = pygame.key.get_pressed()
                     if keys[pygame.K_a]:                    
                         self.player_surf = pygame.image.load("C:/Users/eran rotem/Desktop/repo/MysticalMineshaft/8BitPNG/8BitMinerFlip.png").convert_alpha()
                         player_rect.x -= 20
